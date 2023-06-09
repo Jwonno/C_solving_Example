@@ -1,5 +1,5 @@
 #include<stdio.h>
-
+//문제1과 동일한 형태를 취하되, 역 삼각형을 출력한다. 
 int main(){
     int N=0;
     printf("반복할 횟수를 지정하시오. ");

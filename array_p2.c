@@ -4,19 +4,17 @@
 int main(){
     int student[5]={0};
     int temp[5]={0};
-    printf("학생들의 성적을 입력해주세요: ");
+    printf("학생들의 성적을 입력해주세요(10점 만점): ");
     for(int i=0;i<5;i++){
         scanf("%d",&student[i]);
-        printf("%d번째 학생의 성적은 %d 입니다.",i,student[i]);
-        temp[i]=student[i];
-        for(int k=0;k<i;k++){
-            if(student[k]>student[i]){
-                int temp;
-                temp = student[i];
-                student[i] = student[k];
-                student[k] = temp;
-            }
+    }
+    printf("[성적 그래프]\n");
+    for(int i=0;i<5;i++){
+        printf("%d번째 학생: ",i+1);
+        for(int k=0;k<student[i];k++){
+            printf("*");
         }
+        printf("\n");
     }
    
     return 0;

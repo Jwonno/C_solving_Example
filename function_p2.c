@@ -11,7 +11,7 @@ int Sum_function(int n){
 
 int main(){
     int n;
-    printf("Enter the number: ");
+    printf("Enter the number: "); 
     scanf( "%d",&n);
     printf("Sum is %d",Sum_function(n));
     return 0;

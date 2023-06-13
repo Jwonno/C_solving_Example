@@ -7,7 +7,7 @@
 int main(){
     int N=0,c=0;
     for(int a=1;a<1999;a++){
-        for(int b=1;b<2000-a;b++){
+        for(int b=1;(b<2000-a)&&(b<a);b++){
             c=2000-a-b;
             if(a>b&&b>c){
                 N++;

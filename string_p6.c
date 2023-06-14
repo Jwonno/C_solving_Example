@@ -10,7 +10,7 @@
 void add(int *borrowed, int *num_total_book, char book_title[][30], char book_auth[][30], char book_publ[][30]);
 
 //책을 검색하는 기능
-void search();
+void search(int *borrowed, int num_total_book, char book_title[][30], char book_auth[][30], char book_publ[][30]);
 
 //책을 빌리는 기능
 void borrow();
@@ -80,4 +80,29 @@ void add(int *borrowed, int *num_total_book, char book_title[][30], char book_au
         *num_total_book++;
         printf("Success to add a new book\n\n");
     }
+}
+
+void search(int *borrowed, int num_total_book, char book_title[][30], char book_auth[][30], char book_publ[][30]){
+    char word[30];
+    printf("Enter the search word: ");
+    scanf("%s",word);
+    for(int i=0;i<num_total_book;i++){
+       
+        int k=0;
+        for(int j=0;book_title[i][j];j++){
+            for(;word[k];k++){
+                if(book_title[i][j+k]!=word[k]){
+                k=0;
+                break;
+                }
+            }
+            if(j!=0) {
+                printf("title: \"%s\"\n",book_title[i]);
+                printf("author: \"%s\"\n",book_auth[i]);
+                printf("publisher: \"%s\"\n",book_publ[i]);
+            }
+        }
+        printf("Not exist\n\n");
+    }
+
 }

@@ -4,7 +4,7 @@
 void reverse_str(char str[]);
 
 int main(){
-    char str[100];
+    char str[100];  
     printf("Enter the sentence: ");
     scanf("%s", str);
     reverse_str(str);

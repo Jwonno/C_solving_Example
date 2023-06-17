@@ -65,7 +65,7 @@ int main(){
     }
     return 0;
 }
-
+//책 추가 기능
 void add(int *borrowed, int *num_total_book, char book_title[][30], char book_auth[][30], char book_publ[][30]){
     if(*num_total_book==100) printf("Exceed capacity\n\n");
     else{
@@ -80,7 +80,7 @@ void add(int *borrowed, int *num_total_book, char book_title[][30], char book_au
         printf("Success to add a new book\n\n");
     }
 }
-
+//검색어와 비교
 int compare(char *str, char *word){
    int j=0;
    for(int i=0;str[i];i++){
@@ -94,7 +94,7 @@ int compare(char *str, char *word){
    }
    return 0;
 }
-
+//책 검색 기능
 void search(int *borrowed, int num_total_book, char book_title[][30], char book_auth[][30], char book_publ[][30]){
     char word[30];
     int user_choice;
@@ -150,7 +150,7 @@ void search(int *borrowed, int num_total_book, char book_title[][30], char book_
         }
     }
 }
-
+//책 대출 기능
 void borrow(int*borrowed){
     int num;
     printf("Enter the book number: ");
@@ -161,7 +161,7 @@ void borrow(int*borrowed){
         printf("Success to borrow\n\n");
     }
 }
-
+//책 반납 기능
 void re_turn(int*borrowed){
     int num;
     printf("Enter the book number: ");

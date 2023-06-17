@@ -16,7 +16,7 @@ void search(int *borrowed, int num_total_book, char book_title[][30], char book_
 void borrow(int *borrowed);
 
 //책을 반납하는 기능
-void re_turn();
+void re_turn(int *borrowed);
 
 int main(){
     printf("This is library program.\n");
@@ -51,7 +51,7 @@ int main(){
             
             case 4:
             printf("Return books\n");
-            //re_turn();
+            re_turn(borrowed);
             break;
             
             case 5:
@@ -114,8 +114,8 @@ void search(int *borrowed, int num_total_book, char book_title[][30], char book_
                 printf("Title: \"%s\"\n",book_title[i]);
                 printf("Author: \"%s\"\n",book_auth[i]);
                 printf("Publisher: \"%s\"\n",book_publ[i]);
-                if(borrowed[i]==1) printf("Borrowed\n");
-                else printf("Can borrow\n");
+               if(borrowed[i]==1) printf("Borrowed\n\n");
+                else printf("Can borrow\n\n");
             }
         }
     }
@@ -129,8 +129,8 @@ void search(int *borrowed, int num_total_book, char book_title[][30], char book_
                 printf("Title: \"%s\"\n",book_title[i]);
                 printf("Author: \"%s\"\n",book_auth[i]);
                 printf("Publisher: \"%s\"\n",book_publ[i]);
-                if(borrowed[i]==1) printf("Borrowed\n");
-                else printf("Can borrow\n");
+                if(borrowed[i]==1) printf("Borrowed\n\n");
+                else printf("Can borrow\n\n");
             }
         }
     }
@@ -144,8 +144,8 @@ void search(int *borrowed, int num_total_book, char book_title[][30], char book_
                 printf("Title: \"%s\"\n",book_title[i]);
                 printf("Author: \"%s\"\n",book_auth[i]);
                 printf("Publisher: \"%s\"\n",book_publ[i]);
-                if(borrowed[i]==1) printf("Borrowed\n");
-                else printf("Can borrow\n");
+                if(borrowed[i]==1) printf("Borrowed\n\n");
+                else printf("Can borrow\n\n");
             }
         }
     }
@@ -158,6 +158,17 @@ void borrow(int*borrowed){
     if(borrowed[num-1]==1) printf("Already borrowed\n");
     else {
         borrowed[num-1]=1;
-        printf("Success to borrow\n");
+        printf("Success to borrow\n\n");
+    }
+}
+
+void re_turn(int*borrowed){
+    int num;
+    printf("Enter the book number: ");
+    scanf("%d",&num);
+    if(borrowed[num-1]==0) printf("not borrowed\n");
+    else {
+        borrowed[num-1]=0;
+        printf("Success to return\n\n");
     }
 }

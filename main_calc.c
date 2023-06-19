@@ -5,25 +5,11 @@
 #include <stdlib.h>
 int get_int(char *num);
 int main(int argc, char **argv){
-    int digit=1, num1=0, num2=0;
+    int num1, num2;
     //num1 구하기
-    for(int i=1;argv[1][i];i++){
-        digit*=10;
-    }
-    for(int index=0;argv[1][index];index++){
-        num1+=digit*(argv[1][index]-48);
-        digit/=10;
-    }
-    digit = 1;
-
+    num1 = get_int(argv[1]);
     //num2 구하기
-    for(int i=1;argv[3][i];i++){
-        digit*=10;
-    }
-    for(int index=0;argv[3][index];index++){
-        num2+=digit*(argv[3][index]-48);
-        digit/=10;
-    }
+    num2 = get_int(argv[3]);
     
     if(argv[2][0]=='+'){
     printf("계산결과는 %d 이다.\n",num1+num2);
@@ -31,7 +17,7 @@ int main(int argc, char **argv){
     else if(argv[2][0]=='-'){
     printf("계산결과는 %d 이다.\n",num1-num2);
     }
-    else if(argv[2][0]==42){
+    else if(argv[2][0]=='*'){
     printf("계산결과는 %d 이다.\n",num1*num2);
     }
     else if(argv[2][0]=='/'){
@@ -40,4 +26,17 @@ int main(int argc, char **argv){
     else printf("error");
 
     return 0;
+}
+
+int get_int(char *num){
+     int digit=1, integer=0;
+
+    for(int i=1;num[i];i++){
+        digit*=10;
+    }
+    for(int index=0;num[index];index++){
+        integer+=digit*(num[index]-48);
+        digit/=10;
+    }
+    return integer;
 }

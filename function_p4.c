@@ -7,7 +7,7 @@ void factorize(int N){
         if(N%i==0){
             printf("*%d",i);
             N=N/i;
-            i=2;
+            i=1;
         }
         
     }

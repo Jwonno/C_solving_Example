@@ -67,7 +67,9 @@ int main(){
 
     while(fscanf(fp, "%s", data)!=EOF){
         if(strcmp(data, "this")==0){
-            fseek(fp, -(long)strlen("this"), SEEK_CUR);
+            fseek(fp, -(long)strlen("this"), SEEK_CUR);     
+            //strlen() 함수는 unsigend long 을 반환하는데 fseek() 함수는 size_t, 즉 long int 를 인자로 받는다. 
+            //따라서 명시적으로 캐스팅(형변환)하지 않으면 컴파일러 오류가 발생한다.   
             fputs("that",fp);
             fflush(fp);
         }

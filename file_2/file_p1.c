@@ -22,7 +22,6 @@ AAA
 와 같은 형식 이지요. 물론 파일에 도서 목록을 출력하는 작업도 수정해야 합니다. */
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 
 enum{N, Y};
 typedef struct BOOK {
@@ -283,7 +282,7 @@ int load_book_list(BOOK *book, int *num_total_book){
         if(fgetc(fp)=='Y') book[i].borrowed = Y;
         else book[i].borrowed = N;
         fseek(fp,-1,SEEK_CUR);
-        
+
         //파일 위치 지정자를 다음줄로 이동시키기위해 사용한 코드
         fgets(buf,29,fp);
     }

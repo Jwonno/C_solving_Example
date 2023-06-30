@@ -32,7 +32,9 @@ int explore_character(char word[]){
                 }
                 i++;
             }
-            if(c!=EOF) fseek(fp,-i,SEEK_CUR);
+            if(c!=EOF) fseek(fp,-i,SEEK_CUR);       
+            //파일 끝부분에 검색어가 존재할 경우 파일의 맨 마지막 부분에서 파일 위치 지정자가 더 가지 못하고 막혀서 덜 가게 되고 fseek() 함수에 의해 다시 제자리로 오게된다.
+            //따라서 파일 맨 마지막 부분에 존재하는 검색어가 아닐 경우에만 fseek() 함수를 호출해야한다. 
         }
     }
 

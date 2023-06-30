@@ -28,14 +28,14 @@ int print_line_number(char word[]){
         int i=0;
         if(word[i]==c){
             fseek(fp, -1, SEEK_CUR);
-            while(word[i]==fgetc(fp)){
+            while(word[i]==(c=fgetc(fp))){
                 if(word[i+1]==NULL) {
                     printf("The line number: %d\n",line_num); 
                     check=1; 
                 }
                 i++;
             }
-            fseek(fp,-i,SEEK_CUR);
+            if(c!=EOF) fseek(fp,-i,SEEK_CUR);
         }
         if(c=='\n') line_num++;
     }

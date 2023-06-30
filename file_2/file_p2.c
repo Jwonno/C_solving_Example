@@ -1,3 +1,4 @@
+// 파일에서 특정한 단어를 검색하여 몇 번째 줄에 나오는지 모두 출력하는 프로그램을 만드세요.
 #include <stdio.h>
 
 int print_line_number(char word[]);

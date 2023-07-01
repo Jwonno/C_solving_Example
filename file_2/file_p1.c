@@ -165,6 +165,7 @@ void search(int num_total_book, BOOK *book){
         scanf("%s",word);
         for(int i=0;i<num_total_book;i++){
             if(compare(book[i].title,word)==1){
+                printf("Number: %d\n",i+1);
                 print_book(book[i]);
             }
         }
@@ -175,6 +176,7 @@ void search(int num_total_book, BOOK *book){
         scanf("%s",word);
         for(int i=0;i<num_total_book;i++){
            if(compare(book[i].auth,word)==1){
+                printf("Number: %d\n",i+1);
                 print_book(book[i]);
             }
         }
